@@ -1,0 +1,48 @@
+.continentes {
+position:relative;
+float:left;
+height:560px;
+width:535px;
+margin-left:100px;
+background:url(mapa.gif) no-repeat left top;}
+
+.continentes li{
+list-style:none;
+position:absolute; }
+
+#norte{
+width:120px;
+height:140px;
+left:208px;
+bottom:40px;}
+
+#noroeste{
+
+width:226px;
+height:258px;}
+
+#sul{
+width:214px;
+height:164px;
+right:40px;}
+
+#vix{
+width:121px;
+height:75px;
+left:211px;
+top:6px;}
+
+.continentes li a{
+display:block;
+height:100%;
+text-indent:-999px;}
+
+.continentes li a:hover{background:url(mapa.gif) no-repeat;}
+
+li#norte a:hover{background-position:0px -275px;}
+
+li#noroeste a:hover {background-position:-227px -381px;}
+
+li#sul a:hover {background-position:-227px -284px;}
+
+li#vix a:hover {background-position:-347px -287px;}
