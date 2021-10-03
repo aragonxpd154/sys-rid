@@ -1,0 +1,422 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+
+/*  Por Marcos Silva  */
+
+
+/* corpo do menu
+----------------------------*/
+#ddmenu
+{
+    display:block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align:center; /*Especifique o alinhamento de toda a UL se UL não for largura:100%;*/
+    letter-spacing:normal;
+    padding:20px 10px;
+    position:relative;
+}
+
+#ddmenu ul
+{ 
+    margin:0 auto;
+    padding:0;
+    text-align:left; /* Alinhamento de cada item de menu de nível superior dentro da UL */
+    width:100%;
+    font-size:0;
+    background:rgba(255,255,255,0.7);
+    display:none;
+    list-style:none;
+    position:relative;
+    z-index:999999990; 
+    
+}
+
+#ddmenu li
+{
+    margin:0;
+    padding:0;
+    font-size:20px;
+    display:block;
+    position:relative;
+    color:#FFF;
+    line-height:44px; /*Isso determina a altura do menu*/
+    vertical-align:middle;
+    transition:background-color 0.2s;
+    outline:none;
+	-moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#ddmenu .over
+{
+    
+}
+
+#ddmenu .over.no-sub {
+    
+}
+
+#ddmenu .top-heading
+{
+    font-weight:normal;
+    margin:0 22px;
+    color:inherit;
+    text-decoration:none;
+    display:inline-block; 
+    outline:0;
+    cursor:pointer;
+}
+
+/* links do top-heading */
+#ddmenu a, #ddmenu a:link, #ddmenu a:hover
+{
+    color:inherit;
+}
+#ddmenu a:hover
+{
+    text-decoration:underline;
+}
+#ddmenu a:focus
+{
+    outline:1px dotted #09F;
+}
+
+/* circunflexo
+(arrow icon) */
+#ddmenu .caret
+{
+    color:inherit;
+    left:-18px;
+    width: 0;
+    height: 0;
+    overflow:hidden;/*para IE6*/
+    vertical-align:middle;
+    margin-bottom:2px;
+    border-top: 6px solid;/*caret size is 6px now*/
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    display: inline-block;
+    position:relative;
+}  
+        
+/*  layout do sub-menu
+----------------------------*/
+
+#ddmenu .dropdown
+{
+    width:auto;    
+    left:0px;
+    color:#333333; 
+    padding:0;margin:0;display:none;overflow:hidden;
+    position:relative;
+    top:100%;
+    *top:auto;/*IE7 hacker HUEHUE*/    
+    
+}
+
+#ddmenu .over .dropdown
+{
+    display:block;
+}
+
+#ddmenu .dd-inner {
+    text-align:left;
+    padding:20px;
+    margin:0px;
+    background-color:#f6f6f6;
+    white-space:nowrap;
+    font-size:16px;
+
+    border-radius: 0 0 4px 4px;
+}
+
+#ddmenu ul ul
+{ 
+    margin:0;padding:0;text-align:left;width:auto;background:none;border:none;display:block;position:static;z-index:0;border-radius:0;
+}
+
+#ddmenu ul ul li
+{
+    font-size:16px;
+    padding:6px 0; /*Ele determina a altura da linha*/
+    color:inherit;
+    line-height:1;
+    margin:0;display:block;position:static;background:none;border:none;transition:none;border-radius:0;
+}
+  
+/* links em sub menu
+----------------------------*/
+
+#ddmenu .dropdown a
+{
+    color:#003399;
+    line-height:1;
+    text-decoration:none;
+    transition:color 0.5s;
+}
+
+#ddmenu .dropdown a:hover, #ddmenu .dropdown a:focus
+{
+    text-decoration:underline;
+    color:#000000;
+}
+
+/* blocos dentro do submenu
+-----------------------------*/
+#ddmenu .column
+{
+    text-align:left;
+    vertical-align:top;/*or middle*/
+    display:inline-block;
+    *display:inline;*zoom:1;
+    white-space:normal;
+    width:auto;min-width:260px;
+padding:0 30px;
+border-right:2px solid #ccc;
+}
+
+#ddmenu .dd-inner ul:last-child
+{
+    border-right:none;
+}
+
+#ddmenu h3 {
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+#ddmenu li {
+background:#37434f;
+margin-top:3px;
+border-radius:6px;}
+
+/* useful when http://aragones.esy.es */
+#ddmenuLink {display:none;}
+
+
+/*######## adicionando styles para mobile-pesquisa responsive menu ########*/
+
+#search-block {            
+    -webkit-transition: padding .25s, height .25s;
+    transition: padding .25s, height .25s;
+    height: 0px;
+    overflow:hidden;
+    padding:0;
+}
+        
+#search-block.show {
+    display: block;
+    height: 36px;
+    margin:20px 0 16px;
+}
+#search-block input[type="search"] {
+    width: 100%;
+    border-radius:6px;
+    height: 36px;
+    line-height:36px;
+    font-size:20px;
+}
+
+#ddmenu div.logo {
+	background: #37434f url(menu-buttons.png) no-repeat 0 0;
+	height:72px;
+	border-radius:9px;		
+}
+#ddmenu div.logo a {
+	display: block;
+	height:72px;
+	max-width:200px;
+	background:none;		
+}
+    
+#ddmenu .menu-icon, div.searchIcon  {
+	width: 60px;
+	height:72px;
+	background: transparent url(menu-buttons.png) no-repeat -60px -72px;
+	display: block;
+	cursor: pointer;
+	-moz-user-select:none;		
+    -webkit-user-select: none;
+    margin-right:9px;
+    outline:none;     
+    /*alinhe o ícone à direita*/
+    float:right;
+}
+#ddmenu div.searchIcon  
+{
+    background-position:0 -72px;
+    right:88px;
+}
+
+
+
+
+/*styles para mobile*/
+@media only screen and (max-width: 800px) 
+{
+    #ddmenu
+    {
+        padding:0;
+    }
+
+    #ddmenu .column.mayHide {
+        display:none;
+    }
+    
+    #ddmenu .caret
+    {
+    	position:absolute;
+        left:auto;
+        right:14px;
+        top: 19px;
+        border-width:5px;
+    }  
+    /*gire cada coluna para listar verticalmente em vez de horizontalmente */
+    #ddmenu .column {
+        width:auto;
+        padding:0;
+        border:none;
+        display:block;
+    }
+}
+
+/* Intrudução PSD */
+
+</style>
+
+	<title>Painel de Controle</title>
+	
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700" rel="stylesheet">
+	
+	<!-- Template Styles -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	
+	<!-- CSS Reset -->
+	<link rel="stylesheet" href="css/normalize.css">
+	
+	<!-- Milligram CSS minified -->
+	<link rel="stylesheet" href="css/milligram.min.css">
+	
+	<!-- Main Styles -->
+	<link rel="stylesheet" href="css/styles.css">
+	
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="navbar">
+		<div class="row">
+			<div class="column column-30 col-site-title"><a href="#" class="site-title float-left">Rid</a></div>
+			<div class="column column-40 col-search"><a href="#" class="search-btn fa fa-search"></a>
+				<input type="text" name="" value="" placeholder="Buscar..." />
+			</div>
+			<div class="column column-30">
+				<div class="user-section"><a href="#">
+					<img src="imagens/meu_perfil.png" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
+					<div class="username">
+						<h4>Login</h4>
+						<p>Administrador</p>
+					</div>
+				</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div id="sidebar" class="column">
+			<h5>Navegação</h5>
+			<ul>
+				<li><a href="#"><em class="fa fa-home"></em> Inicio</a></li>
+				<!-- <li><a href="#charts"><em class="fa fa-bar-chart"></em> Charts</a></li>
+				<li><a href="#widgets"><em class="fa fa fa-clone"></em> Widgets</a></li>
+				<li><a href="#forms"><em class="fa fa-pencil-square-o"></em> Forms</a></li>
+				<li><a href="#alerts"><em class="fa fa-warning"></em> Alerts</a></li>
+				<li><a href="#buttons"><em class="fa fa-hand-o-up"></em> Buttons</a></li>
+				<li><a href="#tables"><em class="fa fa-table"></em> Tables</a></li>
+				<li><a href="#grid"><em class="fa fa-columns"></em> Grid</a></li>
+			-->
+			</ul>
+		</div>
+		<section id="main-content" class="column column-offset-20">
+			<div class="row grid-responsive">
+				<div class="column page-heading">
+					<div class="large-card">
+						<h1>Bem vindos</h1>
+						<p class="text-large">Faça login agora para usufruir do gerênciamento do sistema</p>
+						<p> <em>(é possivel realizar consulta sem registro)</em></p>
+						<a class="button">Realizar o login</a>
+					</div>
+				</div>
+			</div>
+		
+			
+
+
+
+
+
+
+
+
+
+
+
+			</div>
+			<p class="credit">RID-SYS REV 1.0 <a href="http://aragones.esy.es/"></a></p>
+		</section>
+	</div>
+	
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script>
+	window.onload = function () {
+		var chart1 = document.getElementById("line-chart").getContext("2d");
+		window.myLine = new Chart(chart1).Line(lineChartData, {
+		responsive: true,
+		scaleLineColor: "rgba(0,0,0,.2)",
+		scaleGridLineColor: "rgba(0,0,0,.05)",
+		scaleFontColor: "#c5c7cc"
+		});
+		var chart2 = document.getElementById("bar-chart").getContext("2d");
+		window.myBar = new Chart(chart2).Bar(barChartData, {
+		responsive: true,
+		scaleLineColor: "rgba(0,0,0,.2)",
+		scaleGridLineColor: "rgba(0,0,0,.05)",
+		scaleFontColor: "#c5c7cc"
+		});
+		var chart4 = document.getElementById("pie-chart").getContext("2d");
+		window.myPie = new Chart(chart4).Pie(pieData, {
+		responsive: true,
+		segmentShowStroke: false
+		});
+		var chart5 = document.getElementById("radar-chart").getContext("2d");
+		window.myRadarChart = new Chart(chart5).Radar(radarData, {
+		responsive: true,
+		scaleLineColor: "rgba(0,0,0,.05)",
+		angleLineColor: "rgba(0,0,0,.2)"
+		});
+		var chart6 = document.getElementById("polar-area-chart").getContext("2d");
+		window.myPolarAreaChart = new Chart(chart6).PolarArea(polarData, {
+		responsive: true,
+		scaleLineColor: "rgba(0,0,0,.2)",
+		segmentShowStroke: false
+		});
+	};
+	</script>			
+
+</body>
+</html> 
