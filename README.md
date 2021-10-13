@@ -1,4 +1,4 @@
-# sistema-rid
+# sys-rid
 
 The generic technical sector requires an information system that meets its managerial needs, consisting of task scheduling, asset management, parts inventory, cost assessment and reporting functions. This system must be universal and with a high level of coupling with the other systems in use.
 
