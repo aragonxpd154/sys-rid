@@ -40,7 +40,7 @@ Working Here...
 
 ## :information_source: About
 
-O departamento de TI e Engenharia precisa de um sistema informatizado para gerenciar todas as suas atividades. Para atender a essa necessidade foi criado o SYS-RID. Este sistema utiliza várias tecnologias, tais como PHP, Python, Script Shell, HTML e MySQL como banco de dados, e roda em um navegador em rede local.
+The IT and Engineering department needs a computerized system to manage all its activities. To meet this need, SYS-RID was created. This system uses several technologies, such as PHP, Python, Shell Script, HTML and MySQL as a database, and runs in a browser on a local network.
 
 ## ☕ Project Proposal
 
