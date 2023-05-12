@@ -29,7 +29,7 @@ IT and Engineering departments requires an information system that meets its man
 </p>
 
 <p align="center">
-<img alt="Demo on Photo" src="https://i.imgur.com/ElBRN8j.png">
+<img alt="Demo on Photo" src="https://i.imgur.com/PVSyRxs.png">
 </p>
 
 ## :rocket: Technologies
